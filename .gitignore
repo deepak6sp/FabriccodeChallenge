@@ -2,3 +2,4 @@ node_modules
 coverage
 calculator
 *.js
+!jest.config.js
