@@ -2,9 +2,10 @@
   "name": "code-challenge",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "geektrust.ts",
   "scripts": {
-    "start": "npm i && npx nodemon ./index.ts",
+    "start": "node geektrust.ts",
+    "server": "npm i && npx nodemon ./geektrust.ts",
     "test": "jest --collect-coverage",
     "test:watch": "jest --watchAll"
   },
