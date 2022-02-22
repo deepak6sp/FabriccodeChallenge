@@ -6,11 +6,8 @@ export const convertTextToJSON = async (rl: Promise<string> ): Promise<{ custome
     const customerDetails: CustomerDetails[] = [];
     const balanceRequest: BalanceRequest[] = [];
 
-    console.log("\n----------- INPUT ----------")
-
     for await (const line of await rl) {
         const transaction = line.split(" ");
-        console.log(line)
         switch(transaction[0]) {
             case Action.Loan:
                 customerDetails.push({

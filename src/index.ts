@@ -6,7 +6,7 @@ const LOAN_FILE_PATH = `${FILE_DIR_PATH}/loan-file.txt`;
 import { convertTextToJSON } from './businessLogic/converTextToJSON';
 import { getBalanceRequest } from './businessLogic';
 
-export const readFileAndOutput = async (filePath?: string): Promise<void> => {
+export const parseFileAndGetBalance = async (filePath?: string): Promise<any> => {
     const file_to_execute = filePath ? filePath : LOAN_FILE_PATH
     const fileStream = fs.createReadStream(file_to_execute);
     const rl = readline.createInterface({
@@ -14,9 +14,7 @@ export const readFileAndOutput = async (filePath?: string): Promise<void> => {
         crlfDelay: Infinity
       });
 
-    const {customerDetails, balanceRequest} = await convertTextToJSON(rl);
-
-    console.log("\n----------OUTPUT----------")
-    getBalanceRequest(customerDetails, balanceRequest)
-    console.log("\n")
+    const { customerDetails, balanceRequest } = await convertTextToJSON(rl);
+    const balanceResponse = getBalanceRequest(customerDetails, balanceRequest)
+    return balanceResponse;
 }

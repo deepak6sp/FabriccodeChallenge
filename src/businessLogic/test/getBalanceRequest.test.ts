@@ -4,8 +4,13 @@ import { mockCustomerDetails, mockBalance } from "./mocks";
 
 describe("GetBalanceRequest()", () => {
     it("should return bankName, borrowerName, amountPaid, numberOfEmiRemaining", () => {
-        const consoleSpy = jest.spyOn(console, 'log');
-        getBalanceRequest([mockCustomerDetails], [mockBalance]);
-        expect(consoleSpy).toHaveBeenCalledWith("IDIDI", "Dale", 2326, 7);
+        expect(getBalanceRequest([mockCustomerDetails], [mockBalance])).toEqual([
+            { 
+                "bankName": "IDIDI", 
+                "borrowerName": "Dale", 
+                "amountPaid": 2326,
+                "numberOfEmiRemaining": 7
+            }
+        ]);
     })
 });
