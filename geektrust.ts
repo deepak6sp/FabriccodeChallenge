@@ -3,8 +3,8 @@ const app = express()
 const port = 3000
 import { readFileAndOutput } from "./src";
 
-readFileAndOutput()
+const filePath = process.argv[2];
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+readFileAndOutput(filePath)
+
+app.listen(port);

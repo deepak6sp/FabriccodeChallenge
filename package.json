@@ -1,7 +1,7 @@
 {
   "name": "code-challenge",
   "version": "1.0.0",
-  "description": "",
+  "description": "Deepak code challenge",
   "main": "geektrust.ts",
   "scripts": {
     "install": "npx tsc geektrust.ts",
