@@ -1,4 +1,4 @@
-import {CustomerDetails} from '../../loan.types';
+import {CustomerDetails} from '../loan.types';
 
 export const basicCalculations = (customerInfo: CustomerDetails) => {
     const loanTenure = customerInfo.loanDetails.noOfYears * 12;

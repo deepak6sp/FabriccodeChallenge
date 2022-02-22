@@ -1,5 +1,5 @@
 import { basicCalculations, reCalculateAmountPaidAndRemainingEmi } from ".";
-import { CustomerDetails, BalanceRequest } from "../../loan.types";
+import { CustomerDetails, BalanceRequest } from "../loan.types";
 
 
 export const getLoanBalance = (customers: CustomerDetails[], balance: BalanceRequest): any => {

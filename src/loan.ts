@@ -3,8 +3,8 @@ const readline = require('readline');
 const LOAN_FILE_PATH = 'src/loan-file.txt';
 import { CustomerDetails, BalanceRequest, Action } from './loan.types';
 
-import { prepareLoanDetails, preparePayments, prepareBalanceRequest } from './functions/helpers';
-import { getLoanBalance } from './functions/businessLogic';
+import { prepareLoanDetails, preparePayments, prepareBalanceRequest } from './utils';
+import { getLoanBalance } from './businessLogic';
 
 const convertTextToJSON = async (rl: Promise<string> ): Promise<{ customerDetails: CustomerDetails[]; balanceRequest: BalanceRequest[]; }> => {
 

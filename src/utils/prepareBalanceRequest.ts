@@ -1,4 +1,4 @@
-import { BalanceRequest, Action } from '../../loan.types';
+import { BalanceRequest, Action } from '../loan.types';
 
 export const prepareBalanceRequest = (transaction: string[]): BalanceRequest => {
     return {

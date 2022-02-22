@@ -1,4 +1,4 @@
-import { LoanDetails, Action } from '../../loan.types';
+import { LoanDetails, Action } from '../loan.types';
 
 export const prepareLoanDetails = (transaction: string[]): LoanDetails => {
     return  {

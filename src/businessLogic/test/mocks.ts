@@ -1,4 +1,4 @@
-import { Action, CustomerDetails } from "../../../loan.types";
+import { Action, CustomerDetails } from "../../loan.types";
 
 export const mockCustomerDetails: CustomerDetails = {
     "bankName": "IDIDI",

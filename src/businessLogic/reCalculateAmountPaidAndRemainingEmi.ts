@@ -1,4 +1,4 @@
-import {CustomerDetails} from '../../loan.types';
+import {CustomerDetails} from '../loan.types';
 
 export const reCalculateAmountPaidAndRemainingEmi = (customerInfo: CustomerDetails, amountPaid: number,  emi: number, numberOfEmiRemaining: number) => {
     const newAmountPaid = amountPaid + customerInfo.payments[0].amount
