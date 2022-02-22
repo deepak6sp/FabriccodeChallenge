@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-import { readFileAndOutput } from "./src/loan";
+import { readFileAndOutput } from "./src";
 
 readFileAndOutput()
 

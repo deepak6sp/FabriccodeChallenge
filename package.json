@@ -4,8 +4,9 @@
   "description": "",
   "main": "geektrust.ts",
   "scripts": {
-    "start": "node geektrust.ts",
-    "server": "npm i && npx nodemon ./geektrust.ts",
+    "install": "npx tsc geektrust.ts",
+    "start": "node geektrust.js",
+    "server": "npx nodemon ./geektrust.ts",
     "test": "jest --collect-coverage",
     "test:watch": "jest --watchAll"
   },
