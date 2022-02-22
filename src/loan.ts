@@ -4,7 +4,7 @@ const LOAN_FILE_PATH = 'src/loan-file.txt';
 import { CustomerDetails, BalanceRequest, Action } from './loan.types';
 
 import { prepareLoanDetails, preparePayments, prepareBalanceRequest } from './utils';
-import { getLoanBalance } from './businessLogic';
+import { getBalanceRequest } from './businessLogic';
 
 const convertTextToJSON = async (rl: Promise<string> ): Promise<{ customerDetails: CustomerDetails[]; balanceRequest: BalanceRequest[]; }> => {
 
@@ -30,7 +30,7 @@ const convertTextToJSON = async (rl: Promise<string> ): Promise<{ customerDetail
                 balanceRequest.push(prepareBalanceRequest(transaction))
                 break
             default:
-                console.error("Invalid input action")
+                console.log("Invalid input action")
         }
     }
 
@@ -38,12 +38,6 @@ const convertTextToJSON = async (rl: Promise<string> ): Promise<{ customerDetail
 
 }
 
-const getBalanceRequest = (customerDetails: CustomerDetails[], balanceRequest: BalanceRequest[]) => {
-    balanceRequest.forEach((balance: BalanceRequest) => {
-        const {  customerInfo, amountPaid, numberOfEmiRemaining } = getLoanBalance(customerDetails, balance)
-        console.log(customerInfo.bankName, customerInfo.borrowerName, amountPaid, numberOfEmiRemaining)
-    });
-}
 
 export const readFileAndOutput = async (): Promise<void> => {
     const fileStream = fs.createReadStream(LOAN_FILE_PATH);
@@ -54,5 +48,6 @@ export const readFileAndOutput = async (): Promise<void> => {
 
     const {customerDetails, balanceRequest} = await convertTextToJSON(rl);
 
+    console.log("----------OUTPUT----------")
     getBalanceRequest(customerDetails, balanceRequest)
 }

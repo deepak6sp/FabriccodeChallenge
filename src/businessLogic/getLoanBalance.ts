@@ -6,7 +6,7 @@ export const getLoanBalance = (customers: CustomerDetails[], balance: BalanceReq
     const customerInfo = customers.find((customer: any) => customer.bankName === balance.bankName && customer.borrowerName === balance.borrowerName)
     
     if(!customerInfo) {
-        console.error("Error fetching account balance: Customer not found");
+        console.log("Error fetching account balance: Customer not found");
         return;
     }
     
